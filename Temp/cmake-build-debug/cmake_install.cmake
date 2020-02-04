@@ -1,4 +1,4 @@
-# Install script for directory: /home/christian/Temp
+# Install script for directory: /home/christian/Documents/AI/Temp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/christian/Temp/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/christian/Documents/AI/Temp/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

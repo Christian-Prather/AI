@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/Temp.dir/main.cpp.o  -o Temp 
+/usr/bin/g++  -g   CMakeFiles/Temp.dir/main.cpp.o  -o Temp 

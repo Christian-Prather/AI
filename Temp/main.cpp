@@ -3,22 +3,26 @@
 #include <queue>
 #include <sstream>
 #include "node.h"
+// Change expanded to be nodes and then go down the nodes in order they were added finindg the matching node?
 using namespace std;
-
-int main(int argc, char* argv[]) 
+vector<Node> connections;
+vector<string> cities;
+vector<string> expandedCities;
+int currentPathDist = 0;
+int main(int argc, char *argv[])
 {
-    string inputFile = argv[1];
-    string originCity = argv[2];
-    string destinationCity = argv[3];
-
-
-
-
+  //  string inputFile = argv[1];
+//    string originCity = argv[2];
+//    string destinationCity = argv[3];
+string inputFile = "input1.txt";
+string originCity = "Hamburg";
+string destinationCity = "Nuremberg";
 
     int distance = 0;
 
-    priority_queue<pair<Node*, int>> cities;
-    vector <Node *> masterList;
+    // typedef pair<int, Node> P;
+    priority_queue<Node> fringeList;
+    //vector<Node *> masterList;
 
     // string start1;
     // string file1;
@@ -30,106 +34,122 @@ int main(int argc, char* argv[])
     if (file.is_open())
     {
 
-    
-    vector<string> first;
-    vector<string> second;
-    vector<int> dist;
-    string k;
-    string city1;
-    string city2;
-    int theD;
-    getline(file, k);
+        vector<string> first;
+        vector<string> second;
+        vector<int> dist;
+        string k;
+        string city1;
+        string city2;
+        int theD;
+        getline(file, k);
+        // bool firstCity = true;
+        bool matchCity = false;
 
-    while(k != "END OF INPUT")
-    {
-       
-
-        istringstream line(k);
-        // cout << k << endl;
-        line >> city1 >> city2 >> theD;
-        first.push_back(city1);
-        second.push_back(city2);
-        dist.push_back(theD);
-         getline(file, k);
-    }
-
-    int indexOfNode1 = 0;
-    int indexOfNode2 = 0;
-    bool matchedFirst = false;
-    bool matchedSecond = false;
-    int parsedIndex = 0;
-
-    for(int i =0; i<first.size(); i++)
-    {
-        cout << first.at(i) << " " << second.at(i) << " " << dist.at(i) << endl;
-        // Generate the nodes
-        for (int j = 0; j < masterList.size(); j++)
+        while (k != "END OF INPUT")
         {
-            if (masterList.at(j)->name == first.at(i))
-            {
-                // Theres a matching Node we need to jsut append to its children
-                //masterList.at(j)->children.push_back()
-                matchedFirst = true;
-                indexOfNode1 = j;
-                         
 
+            istringstream line(k);
+            // cout << k << endl;
+            line >> city1 >> city2 >> theD;
+            first.push_back(city1);
+            second.push_back(city2);
+            dist.push_back(theD);
+
+            for (int i = 0; i < cities.size(); i++)
+            {
+                if (cities.at(i) == city1)
+                {
+                    matchCity = true;
+                }
             }
-            if (masterList.at(j)->name == second.at(i))
+            if (!matchCity)
             {
-                // Found a mathcing second node
-                matchedSecond = true;
-                indexOfNode2 = j;
+                cities.push_back(city1);
+            }
+            Node newCity;
+            newCity.name = city1;
+            newCity.destination = city2;
+            newCity.dist = theD;
+            newCity.pathDist = currentPathDist + theD;
 
-            } 
+            connections.push_back(newCity);
+            if (newCity.name == originCity)
+            {
+                fringeList.push(newCity);
+            }
 
+            getline(file, k);
         }
-
-        //Build the nodes
-        if(matchedFirst)
-        {
-            if(matchedSecond)
-            {
-
-                masterList.at(indexOfNode1)->children.push_back(make_pair(masterList.at(indexOfNode2), dist.at(i)));
-            }
-            else
-            {
-                Node* temp = new Node();
-                temp->name = second.at(i);
-                masterList.push_back(temp);
-
-                masterList.at(indexOfNode1)->children.push_back(make_pair(temp, dist.at(i)));
-
-            }
-            
-        }
-         else if(matchedSecond)
-        {
-            if(matchedFirst)
-            {
-
-                masterList.at(indexOfNode1)->children.push_back(make_pair(masterList.at(indexOfNode2), dist.at(i)));
-            }
-            else
-            {
-                Node* temp = new Node();
-                temp->name = second.at(i);
-                masterList.push_back(temp);
-
-                masterList.at(indexOfNode2)->children.push_back(make_pair(temp, dist.at(i)));
-                
-            }
-            
-        }
-
-
-
-    }
     }
 
     else
     {
         cout << "Failed to open file: " << endl;
     }
-    
+    for (auto connection : connections)
+    {
+        cout << connection.dist << endl;
+    }
+    /////////////////////////Graph made/////////////////////////////////////////
+    Node* lastFrindge;
+    while (fringeList.size() != 0)
+    {
+        // Get first from fringe list and expand int
+        bool expanded = false;
+        Node currentNode = fringeList.top();
+        currentPathDist = currentNode.pathDist;
+        currentNode.source = lastFrindge;
+        lastFrindge = &currentNode;
+
+        fringeList.pop();
+        cout << "Checking: " << currentNode.name << endl;
+        if (currentNode.name == destinationCity)
+        {
+            cout << "FOUND!!!!" << endl;
+            for (auto traveredNode : expandedCities)
+            {
+                cout << traveredNode << endl;
+            }
+            Node* checker = currentNode.source;
+            string parent = checker->name;
+            while (parent != originCity)
+            {
+                cout << " " << parent << " ";
+                checker = checker->source;
+                parent = checker->name;
+            }
+
+         
+            break;
+            // Put something here to end the program
+        }
+        else
+        {
+            /* code */
+
+            for (auto city : expandedCities)
+            {
+                if (city == currentNode.destination)
+                {
+                    expanded = true;
+                    break;
+                }
+            }
+            if (!expanded)
+            {
+                expandedCities.push_back(currentNode.name);
+
+                for (auto connection : connections)
+                {
+                    // grab all possible connections from city
+                    if (connection.name == currentNode.destination)
+                    {
+                        // Matching Connection add it to fringe list
+                        fringeList.push(connection);
+                    }
+                }
+            }
+        }
+    }
+    cout << "No Possible path found at infinate dist" << endl;
 }

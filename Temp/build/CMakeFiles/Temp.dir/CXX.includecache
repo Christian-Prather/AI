@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/christian/Temp/main.cpp
+/home/christian/Documents/AI/Temp/main.cpp
 iostream
 -
 fstream
@@ -16,9 +16,9 @@ queue
 sstream
 -
 node.h
-/home/christian/Temp/node.h
+/home/christian/Documents/AI/Temp/node.h
 
-/home/christian/Temp/node.h
+/home/christian/Documents/AI/Temp/node.h
 vector
 -
 string

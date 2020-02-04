@@ -9,9 +9,16 @@ using namespace std;
    {
     public:
         string name;
-        vector <pair<Node*, int>> children;
+        string destination;
+        Node* source;
+        int dist;
+        int pathDist;
 
+friend bool operator < (const Node & n1, const Node & n2)
+{   
+    return !(n1.pathDist < n2.pathDist);
 
+}
     };
 
   
