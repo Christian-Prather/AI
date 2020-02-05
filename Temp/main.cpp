@@ -5,30 +5,23 @@
 #include "node.h"
 // Change expanded to be nodes and then go down the nodes in order they were added finindg the matching node?
 using namespace std;
-vector<Node> connections;
+vector<Node*> connections;
 vector<string> cities;
 vector<string> expandedCities;
 int currentPathDist = 0;
 int main(int argc, char *argv[])
 {
-  //  string inputFile = argv[1];
-//    string originCity = argv[2];
-//    string destinationCity = argv[3];
-string inputFile = "input1.txt";
-string originCity = "Hamburg";
-string destinationCity = "Nuremberg";
+    string inputFile = argv[1];
+    string originCity = argv[2];
+    string destinationCity = argv[3];
+//string inputFile = "input1.txt";
+//string originCity = "Hamburg";
+//string destinationCity = "Kassel";
 
     int distance = 0;
 
     // typedef pair<int, Node> P;
-    priority_queue<Node> fringeList;
-    //vector<Node *> masterList;
-
-    // string start1;
-    // string file1;
-    // string end;
-    // cout << "find_route ";
-    // cin >> file1 >> start1 >> end;
+    priority_queue<Node*> fringeList;
 
     ifstream file(inputFile);
     if (file.is_open())
@@ -66,14 +59,14 @@ string destinationCity = "Nuremberg";
             {
                 cities.push_back(city1);
             }
-            Node newCity;
-            newCity.name = city1;
-            newCity.destination = city2;
-            newCity.dist = theD;
-            newCity.pathDist = currentPathDist + theD;
+            Node* newCity = new Node;
+            newCity->name = city1;
+            newCity->destination = city2;
+            newCity->dist = theD;
+            newCity->pathDist = currentPathDist + theD;
 
             connections.push_back(newCity);
-            if (newCity.name == originCity)
+            if (newCity->name == originCity)
             {
                 fringeList.push(newCity);
             }
@@ -88,29 +81,27 @@ string destinationCity = "Nuremberg";
     }
     for (auto connection : connections)
     {
-        cout << connection.dist << endl;
+        cout << connection->dist << endl;
     }
     /////////////////////////Graph made/////////////////////////////////////////
-    Node* lastFrindge;
     while (fringeList.size() != 0)
     {
         // Get first from fringe list and expand int
         bool expanded = false;
-        Node currentNode = fringeList.top();
-        currentPathDist = currentNode.pathDist;
-        currentNode.source = lastFrindge;
-        lastFrindge = &currentNode;
+        Node* currentNode = fringeList.top();
+        currentPathDist = currentNode->pathDist;
+        
 
         fringeList.pop();
-        cout << "Checking: " << currentNode.name << endl;
-        if (currentNode.name == destinationCity)
+        cout << "Checking: " << currentNode->name << endl;
+        if (currentNode->name == destinationCity)
         {
             cout << "FOUND!!!!" << endl;
-            for (auto traveredNode : expandedCities)
-            {
-                cout << traveredNode << endl;
-            }
-            Node* checker = currentNode.source;
+//            for (auto traveredNode : expandedCities)
+//            {
+//                cout << traveredNode << endl;
+//            }
+            Node* checker = currentNode->source;
             string parent = checker->name;
             while (parent != originCity)
             {
@@ -129,7 +120,7 @@ string destinationCity = "Nuremberg";
 
             for (auto city : expandedCities)
             {
-                if (city == currentNode.destination)
+                if (city == currentNode->destination)
                 {
                     expanded = true;
                     break;
@@ -137,14 +128,17 @@ string destinationCity = "Nuremberg";
             }
             if (!expanded)
             {
-                expandedCities.push_back(currentNode.name);
+                expandedCities.push_back(currentNode->name);
 
                 for (auto connection : connections)
                 {
                     // grab all possible connections from city
-                    if (connection.name == currentNode.destination)
+                    if (connection->name == currentNode->destination)
                     {
                         // Matching Connection add it to fringe list
+                        Node *parent = currentNode;
+                        connection->source = currentNode;
+
                         fringeList.push(connection);
                     }
                 }
