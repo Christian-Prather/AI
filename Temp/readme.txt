@@ -10,6 +10,6 @@ Compile Instructions: Program was tested with two compile options 1) Clion with 
                       (on linux this is as simple as sudo apt install cmake) once you have both you should be able to hit f7 in vs code
                       and it will compile. The first time this is done it will need to configure.
         
-Execution: 
+Execution: ah
 
 Code Structure: 
