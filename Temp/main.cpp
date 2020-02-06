@@ -14,13 +14,14 @@ int main(int argc, char *argv[])
     string inputFile = argv[1];
     string originCity = argv[2];
     string destinationCity = argv[3];
-//string inputFile = "input1.txt";
-//string originCity = "Hamburg";
-//string destinationCity = "Kassel";
 
     int distance = 0;
 
     // typedef pair<int, Node> P;
+    /**
+     * @brief This is the que ranked of distance from root node
+     * 
+     */
     priority_queue<Node*> fringeList;
 
     ifstream file(inputFile);
@@ -41,6 +42,11 @@ int main(int argc, char *argv[])
         while (k != "END OF INPUT")
         {
 
+            /**
+             * @brief This is for parsing the file
+             * 
+             * @return istringstream 
+             */
             istringstream line(k);
             // cout << k << endl;
             line >> city1 >> city2 >> theD;
