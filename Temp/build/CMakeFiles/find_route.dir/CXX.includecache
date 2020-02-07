@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/christian/Documents/AI/Temp/main.cpp
+iostream
+-
+fstream
+-
+queue
+-
+sstream
+-
+stack
+-
+node.h
+/home/christian/Documents/AI/Temp/node.h
+
+/home/christian/Documents/AI/Temp/node.h
+vector
+-
+string
+-
+

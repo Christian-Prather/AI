@@ -1,7 +1,7 @@
 [
 {
   "directory": "/home/christian/Documents/AI/Temp/build",
-  "command": "/bin/g++-9    -g   -std=gnu++14 -o CMakeFiles/Temp.dir/main.cpp.o -c /home/christian/Documents/AI/Temp/main.cpp",
+  "command": "/bin/g++-9      -o CMakeFiles/find_route.dir/main.cpp.o -c /home/christian/Documents/AI/Temp/main.cpp",
   "file": "/home/christian/Documents/AI/Temp/main.cpp"
 }
 ]

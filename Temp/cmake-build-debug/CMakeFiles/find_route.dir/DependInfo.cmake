@@ -4,8 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/christian/Documents/AI/Temp/main.cpp" "/home/christian/Documents/AI/Temp/build/CMakeFiles/Temp.dir/main.cpp.o"
+  "/home/christian/Documents/AI/Temp/main.cpp" "/home/christian/Documents/AI/Temp/cmake-build-debug/CMakeFiles/find_route.dir/main.cpp.o"
   )
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

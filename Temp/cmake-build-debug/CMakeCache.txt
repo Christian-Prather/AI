@@ -150,7 +150,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Temp
+CMAKE_PROJECT_NAME:STATIC=find_route
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -222,6 +222,12 @@ Temp_BINARY_DIR:STATIC=/home/christian/Documents/AI/Temp/cmake-build-debug
 
 //Value Computed by CMake
 Temp_SOURCE_DIR:STATIC=/home/christian/Documents/AI/Temp
+
+//Value Computed by CMake
+find_route_BINARY_DIR:STATIC=/home/christian/Documents/AI/Temp/cmake-build-debug
+
+//Value Computed by CMake
+find_route_SOURCE_DIR:STATIC=/home/christian/Documents/AI/Temp
 
 
 ########################
