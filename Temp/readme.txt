@@ -90,6 +90,6 @@ To install GCC 9 if on Ubunut 18.04 (though not strictly necessary):
 	sudo apt install gcc-9 g++-9
 	sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 60 --slave /usr/bin/g++ g++ /usr/bin/g++-9
 	gcc --version
-	
+
 -------------------------------------
-Additional Documentation in /docs/Project1.pdf
+Additional Documentation in /doc/latex/Project1.pdf
