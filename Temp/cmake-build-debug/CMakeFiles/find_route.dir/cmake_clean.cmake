@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/find_route.dir/main.cpp.o"
-  "find_route"
+  "CMakeFiles/find_route.dir/main.cpp.obj"
+  "find_route.exe"
+  "find_route.exe.manifest"
   "find_route.pdb"
+  "libfind_route.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

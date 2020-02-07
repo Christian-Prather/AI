@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/christian/Documents/AI/Temp/main.cpp
+C:/Users/clems/Documents/GitHub/AI/Temp/main.cpp
 iostream
 -
 fstream
@@ -18,9 +18,9 @@ sstream
 stack
 -
 node.h
-/home/christian/Documents/AI/Temp/node.h
+C:/Users/clems/Documents/GitHub/AI/Temp/node.h
 
-/home/christian/Documents/AI/Temp/node.h
+C:/Users/clems/Documents/GitHub/AI/Temp/node.h
 vector
 -
 string
