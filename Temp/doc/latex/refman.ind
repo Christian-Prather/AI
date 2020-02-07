@@ -1,0 +1,81 @@
+\begin{theindex}
+
+  \item {/home/christian/Documents/AI/Temp/CMakeLists.txt}, 
+		\hyperpage{7}
+  \item {/home/christian/Documents/AI/Temp/main.cpp}, \hyperpage{7}
+  \item {/home/christian/Documents/AI/Temp/node.h}, \hyperpage{8}
+  \item {/home/christian/Documents/AI/Temp/readme.txt}, \hyperpage{9}
+
+  \indexspace
+
+  \item {cities}
+    \subitem {main.cpp}, \hyperpage{8}
+  \item {connections}
+    \subitem {main.cpp}, \hyperpage{8}
+
+  \indexspace
+
+  \item {destination}
+    \subitem {Node}, \hyperpage{6}
+  \item {dist}
+    \subitem {Node}, \hyperpage{6}
+
+  \indexspace
+
+  \item {else}
+    \subitem {readme.txt}, \hyperpage{9}
+  \item {expandedCities}
+    \subitem {main.cpp}, \hyperpage{8}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.cpp}, \hyperpage{7}
+  \item {main.cpp}
+    \subitem {cities}, \hyperpage{8}
+    \subitem {connections}, \hyperpage{8}
+    \subitem {expandedCities}, \hyperpage{8}
+    \subitem {main}, \hyperpage{7}
+  \item {members}
+    \subitem {readme.txt}, \hyperpage{9}
+
+  \indexspace
+
+  \item {name}
+    \subitem {Node}, \hyperpage{6}
+  \item {Node}, \hyperpage{5}
+    \subitem {destination}, \hyperpage{6}
+    \subitem {dist}, \hyperpage{6}
+    \subitem {name}, \hyperpage{6}
+    \subitem {operator$<$}, \hyperpage{5}
+    \subitem {pathDist}, \hyperpage{6}
+    \subitem {source}, \hyperpage{6}
+
+  \indexspace
+
+  \item {operator$<$}
+    \subitem {Node}, \hyperpage{5}
+
+  \indexspace
+
+  \item {pathDist}
+    \subitem {Node}, \hyperpage{6}
+
+  \indexspace
+
+  \item {readme.txt}
+    \subitem {else}, \hyperpage{9}
+    \subitem {members}, \hyperpage{9}
+    \subitem {SECOND}, \hyperpage{9}
+    \subitem {string}, \hyperpage{9}
+
+  \indexspace
+
+  \item {SECOND}
+    \subitem {readme.txt}, \hyperpage{9}
+  \item {source}
+    \subitem {Node}, \hyperpage{6}
+  \item {string}
+    \subitem {readme.txt}, \hyperpage{9}
+
+\end{theindex}
