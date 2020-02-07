@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/clems/Documents/GitHub/AI/find_route/main.cpp
+iostream
+-
+fstream
+-
+queue
+-
+sstream
+-
+stack
+-
+node.h
+C:/Users/clems/Documents/GitHub/AI/find_route/node.h
+
+C:/Users/clems/Documents/GitHub/AI/find_route/node.h
+vector
+-
+string
+-
+

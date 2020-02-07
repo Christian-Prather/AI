@@ -80,7 +80,18 @@ and run it from command line with needed arguments.
 The other option (primary development method) is to compile the code with gcc 9.2.1 and cmake this was done with Visual Studio code and the cmake plugin from Microsoft called "CMake Tools" before installing the extension please make sure you have 
 cmake instlled (on linux this is as simple as sudo apt install cmake) once you have both you should be able to hit f7 in VS code and it will compile. The first time this is done it will need to configure which may take 
 some time. After it compiles it will generate a build/ folder in you project folder and inside will be the executable. The input file will either need to be placed in this build folder or a full path passed.
-
+Windows:
+.exe in the windows-build folder
+Open CLion
+Make new cmake project from source
+Choose:
+    doc
+    CMakeList.txt
+    node.h
+    main.cpp
+    readme.txt
+Build
+go to cmake-build-debug run .exe
 
 -------------------------------------
 To install GCC 9 if on Ubunut 18.04 (though not strictly necessary):
